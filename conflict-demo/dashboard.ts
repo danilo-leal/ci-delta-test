@@ -1,8 +1,8 @@
 // Static sample content for merge-conflict testing; this is not application code.
 export const dashboardHeader = {
-  title: "Team Overview",
-  subtitle: "A balanced view of your team's activity.",
-  action: "Browse activity",
+  title: "Evening Review",
+  subtitle: "Reflect on what your team accomplished today.",
+  action: "Write a daily reflection",
 };
 
 export const navigation = [
@@ -13,9 +13,9 @@ export const navigation = [
 
 // Stable navigation content separates the editable sections.
 export const emptyState = {
-  title: "No activity yet",
-  description: "New updates will appear here.",
-  action: "Explore the workspace",
+  title: "Every day has something worth recording",
+  description: "Start with a prompt about today's wins and lessons.",
+  action: "Choose a reflection prompt",
 };
 
 export const accessibility = {
@@ -27,7 +27,7 @@ export const accessibility = {
 };
 
 export const releaseBanner = {
-  title: "An early look at the dashboard",
-  description: "Share feedback with the internal team.",
-  action: "Send feedback",
+  title: "Public preview for contributors",
+  description: "Help refine the daily retrospective workflow.",
+  action: "Explore the retrospective preview",
 };

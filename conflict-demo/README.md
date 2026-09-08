@@ -6,9 +6,9 @@ The GitHub Actions workflow is separate and remains unchanged.
 
 ## Product direction
 
-The dashboard is called Team Overview.
-It prioritizes a balanced summary of activity.
-The primary audience is the whole team.
+The dashboard is called Evening Review.
+It prioritizes completed work and lessons learned.
+The primary audience is contributors reflecting on the day.
 
 ## Shared navigation
 
@@ -20,9 +20,9 @@ The active page is marked explicitly.
 
 ## First-run experience
 
-New users see a short welcome message.
-The first suggested action is to browse recent activity.
-Empty states explain where data will appear.
+New users see an interactive retrospective walkthrough.
+The first suggested action is to write a daily reflection.
+Empty states offer prompts for recording the day's wins.
 
 ## Shared accessibility
 
@@ -34,6 +34,6 @@ Content remains readable at increased text sizes.
 
 ## Rollout plan
 
-Release the dashboard to the internal team first.
-Collect feedback for one week.
-Expand access after reviewing the initial feedback.
+Release the dashboard to contributors in a public preview.
+Collect feedback for three weeks.
+Expand access after the retrospective workflow is approved.

@@ -1,8 +1,8 @@
 {
   "dashboard": {
-    "title": "Team Overview",
-    "defaultView": "summary",
-    "refreshSeconds": 60
+    "title": "Evening Review",
+    "defaultView": "completed",
+    "refreshSeconds": 300
   },
   "navigation": {
     "items": [
@@ -13,9 +13,9 @@
     "showLabels": true
   },
   "notifications": {
-    "digest": "daily",
+    "digest": "weekly",
     "showPreview": true,
-    "maxVisible": 5
+    "maxVisible": 10
   },
   "accessibility": {
     "respectReducedMotion": true,
@@ -25,8 +25,8 @@
     "useSemanticHeadings": true
   },
   "rollout": {
-    "audience": "internal",
-    "percentage": 10,
-    "feedbackDays": 7
+    "audience": "contributors",
+    "percentage": 50,
+    "feedbackDays": 21
   }
 }

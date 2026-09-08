@@ -2,9 +2,9 @@
 
 ## Summary
 
-Introduce Team Overview for the internal team.
-Bring recent activity into a single balanced view.
-Keep the initial release focused on gathering feedback.
+Introduce Evening Review for contributors.
+Bring completed work and lessons into a retrospective view.
+Focus the public preview on building a daily reflection habit.
 
 ## Shared quality checklist
 
@@ -16,9 +16,9 @@ Keep the initial release focused on gathering feedback.
 
 ## User-facing changes
 
-Show a summary of recent workspace activity.
-Offer a daily notification digest.
-Invite users to explore their workspace.
+Show a review of completed work and team accomplishments.
+Offer a weekly notification digest with previews.
+Invite users to write a daily reflection from a guided prompt.
 
 ## Shared release checklist
 
@@ -30,6 +30,6 @@ Invite users to explore their workspace.
 
 ## Availability
 
-Start with ten percent of the internal audience.
-Gather feedback for seven days.
-Decide on wider availability after that review.
+Start with fifty percent of contributors.
+Gather feedback for twenty-one days.
+Require retrospective-workflow approval before wider availability.
