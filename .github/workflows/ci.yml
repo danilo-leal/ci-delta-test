@@ -1,0 +1,68 @@
+name: Playground CI
+
+# Run whenever any branch receives a push.
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Simulate lint checks
+        run: |
+          echo "Simulating lint checks..."
+          sleep 10
+          echo "Lint checks passed!"
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Simulate type checking
+        run: |
+          echo "Simulating type checking..."
+          sleep 20
+          echo "Type checking passed!"
+
+  unit_tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Simulate unit tests
+        run: |
+          echo "Simulating unit tests..."
+          sleep 30
+          echo "Unit tests passed!"
+
+  integration_tests:
+    name: Integration tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Simulate integration tests
+        run: |
+          echo "Simulating integration tests..."
+          sleep 40
+          echo "Integration tests passed!"
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Simulate a production build
+        run: |
+          echo "Simulating a production build..."
+          sleep 50
+          echo "Build passed!"
