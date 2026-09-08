@@ -66,3 +66,18 @@ jobs:
           echo "Simulating a production build..."
           sleep 50
           echo "Build passed!"
+
+  ci_pass:
+    name: CI Pass
+    if: ${{ always() }}
+    needs: [lint, typecheck, unit_tests, integration_tests, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Require every CI job to pass
+        if: ${{ needs.lint.result != 'success' || needs.typecheck.result != 'success' || needs.unit_tests.result != 'success' || needs.integration_tests.result != 'success' || needs.build.result != 'success' }}
+        run: exit 1
+
+      - name: Report CI success
+        run: echo "All required CI jobs passed!"
