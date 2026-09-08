@@ -2,9 +2,9 @@
 
 ## Summary
 
-Introduce Team Overview for the internal team.
-Bring recent activity into a single balanced view.
-Keep the initial release focused on gathering feedback.
+Introduce Morning Brief for team leads.
+Bring urgent work and deadlines into a planning view.
+Focus the private beta on building a daily planning habit.
 
 ## Shared quality checklist
 
@@ -16,9 +16,9 @@ Keep the initial release focused on gathering feedback.
 
 ## User-facing changes
 
-Show a summary of recent workspace activity.
-Offer a daily notification digest.
-Invite users to explore their workspace.
+Show a prioritized list of upcoming work.
+Offer a morning notification digest without previews.
+Invite users to create a priority list from a sample plan.
 
 ## Shared release checklist
 
@@ -30,6 +30,6 @@ Invite users to explore their workspace.
 
 ## Availability
 
-Start with ten percent of the internal audience.
-Gather feedback for seven days.
-Decide on wider availability after that review.
+Start with twenty-five percent of team leads.
+Gather feedback for fourteen days.
+Require planning-workflow approval before wider availability.
