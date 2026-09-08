@@ -1,6 +1,7 @@
 # ci-delta-test
 
 A throwaway repository for testing GitHub CI integrations end to end.
+This README is intentionally concise.
 
 ## How CI works
 
