@@ -2,6 +2,8 @@
 
 A throwaway repository for testing GitHub CI integrations end to end.
 
+> This line was added as a quick edit test.
+
 ## How CI works
 
 The workflow in [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs on
