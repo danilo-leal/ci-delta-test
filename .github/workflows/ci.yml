@@ -1,0 +1,23 @@
+name: Playground CI
+
+# Run whenever any branch receives a push.
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Pretend tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: Start tests
+        run: echo "Starting pretend tests..."
+
+      - name: Simulate work
+        run: sleep 30
+
+      - name: Finish successfully
+        run: echo "All tests passed!"
