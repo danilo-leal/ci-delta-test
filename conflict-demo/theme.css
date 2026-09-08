@@ -1,8 +1,8 @@
 /* Static styling fixtures; these rules are not loaded by an application. */
 .dashboard {
-  background: #f5f5f5;
-  color: #222222;
-  padding: 24px;
+  background: #fff8e7;
+  color: #3d2b1f;
+  padding: 32px;
 }
 
 .navigation {
@@ -14,9 +14,9 @@
 }
 
 .summary-card {
-  background: #ffffff;
-  border: 1px solid #cccccc;
-  border-radius: 8px;
+  background: #fffdf5;
+  border: 2px solid #d9a441;
+  border-radius: 12px;
 }
 
 .focus-target {
@@ -28,7 +28,7 @@
 }
 
 .primary-action {
-  background: #444444;
-  color: #ffffff;
-  padding: 12px 20px;
+  background: #8a4b08;
+  color: #fff8e7;
+  padding: 14px 24px;
 }

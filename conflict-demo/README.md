@@ -6,9 +6,9 @@ The GitHub Actions workflow is separate and remains unchanged.
 
 ## Product direction
 
-The dashboard is called Team Overview.
-It prioritizes a balanced summary of activity.
-The primary audience is the whole team.
+The dashboard is called Morning Brief.
+It prioritizes urgent work and upcoming deadlines.
+The primary audience is team leads planning the day.
 
 ## Shared navigation
 
@@ -20,9 +20,9 @@ The active page is marked explicitly.
 
 ## First-run experience
 
-New users see a short welcome message.
-The first suggested action is to browse recent activity.
-Empty states explain where data will appear.
+New users see a guided planning checklist.
+The first suggested action is to create today's priority list.
+Empty states offer a sample plan to get started.
 
 ## Shared accessibility
 
@@ -34,6 +34,6 @@ Content remains readable at increased text sizes.
 
 ## Rollout plan
 
-Release the dashboard to the internal team first.
-Collect feedback for one week.
-Expand access after reviewing the initial feedback.
+Release the dashboard to team leads in a private beta.
+Collect feedback for two weeks.
+Expand access after the planning workflow is approved.

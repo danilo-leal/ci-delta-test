@@ -1,8 +1,8 @@
 {
   "dashboard": {
-    "title": "Team Overview",
-    "defaultView": "summary",
-    "refreshSeconds": 60
+    "title": "Morning Brief",
+    "defaultView": "priorities",
+    "refreshSeconds": 30
   },
   "navigation": {
     "items": [
@@ -13,9 +13,9 @@
     "showLabels": true
   },
   "notifications": {
-    "digest": "daily",
-    "showPreview": true,
-    "maxVisible": 5
+    "digest": "morning",
+    "showPreview": false,
+    "maxVisible": 3
   },
   "accessibility": {
     "respectReducedMotion": true,
@@ -25,8 +25,8 @@
     "useSemanticHeadings": true
   },
   "rollout": {
-    "audience": "internal",
-    "percentage": 10,
-    "feedbackDays": 7
+    "audience": "team-leads",
+    "percentage": 25,
+    "feedbackDays": 14
   }
 }
