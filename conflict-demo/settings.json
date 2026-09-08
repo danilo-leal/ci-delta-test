@@ -1,0 +1,32 @@
+{
+  "dashboard": {
+    "title": "Team Overview",
+    "defaultView": "summary",
+    "refreshSeconds": 60
+  },
+  "navigation": {
+    "items": [
+      "overview",
+      "activity",
+      "settings"
+    ],
+    "showLabels": true
+  },
+  "notifications": {
+    "digest": "daily",
+    "showPreview": true,
+    "maxVisible": 5
+  },
+  "accessibility": {
+    "respectReducedMotion": true,
+    "showFocusRings": true,
+    "announceStatusChanges": true,
+    "minimumTargetSize": 44,
+    "useSemanticHeadings": true
+  },
+  "rollout": {
+    "audience": "internal",
+    "percentage": 10,
+    "feedbackDays": 7
+  }
+}
