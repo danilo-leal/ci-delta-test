@@ -83,3 +83,16 @@ In one job, replace its simulation step with:
 Commit and push the change to get a failed check. Restore the successful
 step and push again to get a passing check. The other jobs remain independent
 and can still pass.
+
+## A tiny experiment
+
+This repository is intentionally simple: make one small change, commit it, and
+push it to see the complete feedback loop:
+
+1. Your branch receives a commit.
+2. GitHub Actions starts five independent checks.
+3. The checks finish at their own pace.
+4. The pull request shows the combined result.
+
+That makes this a useful place to experiment with branches, commits, pull
+requests, and CI without needing to configure an application first.
