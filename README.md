@@ -97,4 +97,9 @@ push it to see the complete feedback loop:
 That makes this a useful place to experiment with branches, commits, pull
 requests, and CI without needing to configure an application first.
 
+### Quick sanity check
+
+If you are only testing the repository connection, adding a short note like
+this is enough to produce a real diff without changing the CI behavior.
+
 > Testing note: this line was added as a harmless README edit.
