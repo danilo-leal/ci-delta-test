@@ -96,3 +96,5 @@ push it to see the complete feedback loop:
 
 That makes this a useful place to experiment with branches, commits, pull
 requests, and CI without needing to configure an application first.
+
+> Testing note: this line was added as a harmless README edit.
