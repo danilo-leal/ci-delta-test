@@ -1,39 +1,39 @@
 # ci-delta-test
 
-Un repository temporaneo destinato a testare le integrazioni CI di GitHub
-end-to-end.
+Um repositório temporário destinado a testar as integrações de CI do GitHub
+de ponta a ponta.
 
-## Come funziona la CI
+## Como funciona a CI
 
-Il workflow in [`.github/workflows/ci.yml`](.github/workflows/ci.yml) viene
-eseguito a ogni push di un branch. Cinque job indipendenti creano cinque
-controlli GitHub distinti:
+O workflow em [`.github/workflows/ci.yml`](.github/workflows/ci.yml) é
+executado a cada push de uma branch. Cinco jobs independentes criam cinco
+verificações distintas no GitHub:
 
-| Controllo | Lavoro simulato |
+| Verificação | Trabalho simulado |
 | --- | --- |
-| Lint | 10 secondi |
-| Controllo dei tipi | 20 secondi |
-| Test unitari | 30 secondi |
-| Test di integrazione | 40 secondi |
-| Compilazione | 50 secondi |
+| Lint | 10 segundos |
+| Verificação de tipos | 20 segundos |
+| Testes unitários | 30 segundos |
+| Testes de integração | 40 segundos |
+| Compilação | 50 segundos |
 
-I job possono essere eseguiti in parallelo e terminare in momenti diversi, cosa
-che rende facili da osservare i cambiamenti di stato. L'avvio del runner e
-l'attesa in coda possono richiedere del tempo. Ogni job ha un timeout di due
-minuti.
+Os jobs podem ser executados em paralelo e terminar em momentos diferentes, o
+que facilita observar as mudanças de estado. A inicialização do runner e a
+espera na fila podem levar algum tempo. Cada job tem um timeout de dois
+minutos.
 
-Si tratta di controlli fittizi: mostrano semplicemente dei messaggi e attendono
-prima di avere esito positivo. Non analizzano il codice. Non sono necessarie
-applicazioni, dipendenze o informazioni riservate.
+Estas são verificações fictícias: elas simplesmente exibem mensagens e esperam
+antes de serem concluídas com sucesso. Elas não analisam o código. Não são
+necessários aplicativos, dependências ou informações confidenciais.
 
-Osserva le esecuzioni nella scheda **Actions** del repository. GitHub Actions
-segnala le esecuzioni dei controlli, non i vecchi stati dei commit. Il workflow
-usa solo l'evento push; l'apertura di una pull request non avvia quindi una
-seconda esecuzione.
+Observe as execuções na aba **Actions** do repositório. O GitHub Actions relata
+as execuções das verificações, não os estados antigos dos commits. O workflow
+usa apenas o evento de push; portanto, abrir uma pull request não inicia uma
+segunda execução.
 
-## Creare un branch, eseguire il push, attendere la CI e fare il merge
+## Criar uma branch, fazer push, aguardar a CI e fazer o merge
 
-Parti dallo stato più recente di `main`, così il tuo branch conterrà il
+Comece pelo estado mais recente de `main`, para que sua branch contenha o
 workflow:
 
 ```sh
@@ -45,20 +45,20 @@ git commit --allow-empty -m "Exercise the CI flow"
 git push -u origin feature/ci-example
 ```
 
-Un commit vuoto è sufficiente per eseguire un test; puoi anche effettuare il
-commit di modifiche reali ai file. Apri una pull request dal tuo branch verso
-`main`, controlla i cinque controlli e fai il merge della pull request quando
-sono tutti completati con successo. Il push del merge su `main` avvia anch'esso
-la CI.
+Um commit vazio é suficiente para executar um teste; você também pode fazer
+commit de alterações reais nos arquivos. Abra uma pull request da sua branch
+para `main`, verifique as cinco verificações e faça o merge da pull request
+quando todas forem concluídas com sucesso. O push do merge para `main` também
+inicia a CI.
 
-Il merge resta manuale. Per impedire un merge prima del completamento positivo
-della CI, configura una regola di protezione del branch o un ruleset GitHub per
-`main` che richieda questi cinque controlli. Il solo workflow non impone questa
-restrizione.
+O merge continua sendo manual. Para impedir um merge antes que a CI seja
+concluída com sucesso, configure uma regra de proteção de branch ou um ruleset
+do GitHub para `main` que exija essas cinco verificações. O workflow, por si
+só, não impõe essa restrição.
 
-### Branch esistenti senza il workflow
+### Branches existentes sem o workflow
 
-Sul tuo branch di funzionalità, recupera la configurazione da `main`:
+Na sua branch de funcionalidade, recupere a configuração de `main`:
 
 ```sh
 git fetch origin
@@ -66,49 +66,50 @@ git merge origin/main
 git push
 ```
 
-I controlli appartengono a uno specifico commit. L'aggiunta del workflow avvia
-controlli sul nuovo commit inviato; non aggiunge controlli ai commit precedenti.
+As verificações pertencem a um commit específico. Adicionar o workflow inicia
+verificações no novo commit enviado; isso não adiciona verificações aos commits
+anteriores.
 
-## Avviare un'altra esecuzione
+## Iniciar outra execução
 
-Su un branch già inviato che contiene il workflow:
+Em uma branch já enviada que contenha o workflow:
 
 ```sh
 git commit --allow-empty -m "Trigger CI"
 git push
 ```
 
-## Testare un errore
+## Testar uma falha
 
-In un job, sostituisci il passaggio di simulazione con:
+Em um job, substitua a etapa de simulação por:
 
 ```yaml
       - name: Fail intentionally
         run: exit 1
 ```
 
-Esegui il commit e il push della modifica per ottenere un controllo non
-superato. Ripristina quindi il passaggio che ha esito positivo ed esegui
-nuovamente il push per ottenere un controllo superato. Gli altri job restano
-indipendenti e possono continuare ad avere esito positivo.
+Faça commit e push da alteração para obter uma verificação malsucedida. Em
+seguida, restaure a etapa bem-sucedida e faça push novamente para obter uma
+verificação aprovada. Os outros jobs continuam independentes e podem continuar
+sendo concluídos com sucesso.
 
-## Un piccolo esperimento
+## Um pequeno experimento
 
-Questo repository è volutamente semplice: apporta una piccola modifica, esegui
-il commit e il push per osservare il ciclo completo di feedback:
+Este repositório é propositalmente simples: faça uma pequena alteração, crie o
+commit e faça push para observar o ciclo completo de feedback:
 
-1. Il tuo branch riceve un commit.
-2. GitHub Actions avvia cinque controlli indipendenti.
-3. I controlli terminano secondo i propri tempi.
-4. La pull request mostra il risultato combinato.
+1. Sua branch recebe um commit.
+2. O GitHub Actions inicia cinco verificações independentes.
+3. As verificações terminam de acordo com seus próprios tempos.
+4. A pull request mostra o resultado combinado.
 
-È quindi un luogo pratico per fare esperimenti con branch, commit, pull request
-e CI senza dover prima configurare un'applicazione.
+Assim, este é um lugar prático para experimentar branches, commits, pull
+requests e CI sem precisar configurar um aplicativo primeiro.
 
-### Verifica rapida
+### Verificação rápida
 
-Se stai testando solo la connessione al repository, aggiungere una breve nota
-come questa è sufficiente a produrre un diff reale senza modificare il
-comportamento della CI.
+Se você estiver testando apenas a conexão com o repositório, adicionar uma
+breve nota como esta é suficiente para produzir um diff real sem alterar o
+comportamento da CI.
 
-> Nota di test: questa riga è stata aggiunta come modifica innocua al README.
+> Nota de teste: esta linha foi adicionada como uma alteração inofensiva ao README.
