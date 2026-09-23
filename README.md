@@ -113,3 +113,5 @@ breve nota como esta é suficiente para produzir um diff real sem alterar o
 comportamento da CI.
 
 > Nota de teste: esta linha foi adicionada como uma alteração inofensiva ao README.
+
+> Outra nota de teste rápida.
