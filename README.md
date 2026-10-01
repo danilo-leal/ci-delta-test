@@ -1,15 +1,14 @@
 # ci-delta-test
 
-Um repositório temporário destinado a testar as integrações de CI do GitHub
-de ponta a ponta.
+A temporary repository for testing GitHub CI integrations from end to end.
 
-## Como funciona a CI
+## How CI works
 
-O workflow em [`.github/workflows/ci.yml`](.github/workflows/ci.yml) é
-executado a cada push de uma branch. Cinco jobs independentes criam cinco
-verificações distintas no GitHub:
+The workflow in [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs
+whenever a branch is pushed. Five independent jobs create five separate checks
+on GitHub:
 
-| Verificação | Trabalho simulado |
+| Check | Simulated work |
 | --- | --- |
 | Lint | 10 segundos |
 | Verificação de tipos | 20 segundos |
@@ -17,24 +16,21 @@ verificações distintas no GitHub:
 | Testes de integração | 40 segundos |
 | Compilação | 50 segundos |
 
-Os jobs podem ser executados em paralelo e terminar em momentos diferentes, o
-que facilita observar as mudanças de estado. A inicialização do runner e a
-espera na fila podem levar algum tempo. Cada job tem um timeout de dois
-minutos.
+Jobs can run in parallel and finish at different times, making it easy to
+observe state changes. Runner startup and queueing can take a little while.
+Each job has a two-minute timeout.
 
-Estas são verificações fictícias: elas simplesmente exibem mensagens e esperam
-antes de serem concluídas com sucesso. Elas não analisam o código. Não são
-necessários aplicativos, dependências ou informações confidenciais.
+These are dummy checks: they simply print messages and wait before finishing
+successfully. They do not analyse the code. No apps, dependencies or secrets
+are required.
 
-Observe as execuções na aba **Actions** do repositório. O GitHub Actions relata
-as execuções das verificações, não os estados antigos dos commits. O workflow
-usa apenas o evento de push; portanto, abrir uma pull request não inicia uma
-segunda execução.
+Watch runs in the repository's **Actions** tab. GitHub Actions reports check
+runs, not the old status of commits. The workflow uses only the push event, so
+opening a pull request does not start a second run.
 
-## Criar uma branch, fazer push, aguardar a CI e fazer o merge
+## Create a branch, push it, wait for CI and merge
 
-Comece pelo estado mais recente de `main`, para que sua branch contenha o
-workflow:
+Start from the latest state of `main` so your branch includes the workflow:
 
 ```sh
 git fetch origin
@@ -45,20 +41,18 @@ git commit --allow-empty -m "Exercise the CI flow"
 git push -u origin feature/ci-example
 ```
 
-Um commit vazio é suficiente para executar um teste; você também pode fazer
-commit de alterações reais nos arquivos. Abra uma pull request da sua branch
-para `main`, verifique as cinco verificações e faça o merge da pull request
-quando todas forem concluídas com sucesso. O push do merge para `main` também
-inicia a CI.
+A blank commit is enough to run a test; you can also commit actual file
+changes. Open a pull request from your branch to `main`, check the five checks
+and merge the pull request once they have all completed successfully. Pushing
+the merge to `main` also starts CI.
 
-O merge continua sendo manual. Para impedir um merge antes que a CI seja
-concluída com sucesso, configure uma regra de proteção de branch ou um ruleset
-do GitHub para `main` que exija essas cinco verificações. O workflow, por si
-só, não impõe essa restrição.
+Merging is still manual. To prevent a merge before CI completes successfully,
+configure a GitHub branch protection rule or ruleset for `main` that requires
+these five checks. The workflow alone does not enforce this restriction.
 
-### Branches existentes sem o workflow
+### Existing branches without the workflow
 
-Na sua branch de funcionalidade, recupere a configuração de `main`:
+On your feature branch, bring in the configuration from `main`:
 
 ```sh
 git fetch origin
@@ -66,56 +60,53 @@ git merge origin/main
 git push
 ```
 
-As verificações pertencem a um commit específico. Adicionar o workflow inicia
-verificações no novo commit enviado; isso não adiciona verificações aos commits
-anteriores.
+Checks belong to a specific commit. Adding the workflow starts checks on the
+newly pushed commit; it does not add checks to earlier commits.
 
-## Iniciar outra execução
+## Start another run
 
-Em uma branch já enviada que contenha o workflow:
+On a branch that has already been pushed and contains the workflow:
 
 ```sh
 git commit --allow-empty -m "Trigger CI"
 git push
 ```
 
-## Testar uma falha
+## Test a failure
 
-Em um job, substitua a etapa de simulação por:
+In one job, replace the simulated step with:
 
 ```yaml
       - name: Fail intentionally
         run: exit 1
 ```
 
-Faça commit e push da alteração para obter uma verificação malsucedida. Em
-seguida, restaure a etapa bem-sucedida e faça push novamente para obter uma
-verificação aprovada. Os outros jobs continuam independentes e podem continuar
-sendo concluídos com sucesso.
+Commit and push the change to get a failed check. Then restore the successful
+step and push again to get a passing check. The other jobs remain independent
+and can still complete successfully.
 
-## Um pequeno experimento
+## A small experiment
 
-Este repositório é propositalmente simples: faça uma pequena alteração, crie o
-commit e faça push para observar o ciclo completo de feedback:
+This repository is deliberately simple: make a small change, commit it and
+push to see the full feedback cycle:
 
-1. Sua branch recebe um commit.
-2. O GitHub Actions inicia cinco verificações independentes.
-3. As verificações terminam de acordo com seus próprios tempos.
-4. A pull request mostra o resultado combinado.
+1. Your branch receives a commit.
+2. GitHub Actions starts five independent checks.
+3. The checks finish according to their own timings.
+4. The pull request shows the combined result.
 
-Assim, este é um lugar prático para experimentar branches, commits, pull
-requests e CI sem precisar configurar um aplicativo primeiro.
+This makes it a handy place to experiment with branches, commits, pull
+requests and CI without having to set up an app first.
 
-### Verificação rápida
+### Quick check
 
-Se você estiver testando apenas a conexão com o repositório, adicionar uma
-breve nota como esta é suficiente para produzir um diff real sem alterar o
-comportamento da CI.
+If you're only testing the repository connection, adding a brief note like
+this is enough to produce a real diff without changing CI behaviour.
 
-> Nota de teste: esta linha foi adicionada como uma alteração inofensiva ao README.
+> Test note: this line was added as a harmless change to the README.
 
-> Outra nota de teste rápida.
+> Another quick test note.
 
-> Mais uma pequena alteração para testar o fluxo de edição.
+> One more small change to test the editing workflow.
 
-> Teste adicional: o README continua sendo fácil de editar.
+> Further test: the README is still easy to edit.
