@@ -144,12 +144,8 @@ has not landed and explain the blocker. Continue safe recovery when permitted
 by the automatic-conflict preference, but never bypass a failed check or
 uncertain scope. After any recovery, verify the final outcome again.
 
-For every terminal outcome, call `report_subthread_status`:
-
-- Use `status: "success"` only after verifying that the requested change
-  reached `origin/main` through the pull-request workflow.
-- Use `status: "failure"` for a failed attempt or genuine blocker. Explain what
-  stopped landing and the useful next step.
-- `title` must be concise sentence-case Markdown.
-- `description` must be short, easy-to-read Markdown of a few sentences that
-  states the verified result or blocker and relevant evidence.
+Delta supplies the built-in `report-landed` instructions alongside this Land
+skill. Follow them at a terminal outcome: after the last tool call, end the
+final assistant response with one `<land-result>` block for a verified landing
+or a stopped attempt. Ordinary prose alone does not publish a result to the
+parent thread.
