@@ -117,3 +117,5 @@ comportamento da CI.
 > Outra nota de teste rápida.
 
 > Mais uma pequena alteração para testar o fluxo de edição.
+
+> Teste adicional: o README continua sendo fácil de editar.
