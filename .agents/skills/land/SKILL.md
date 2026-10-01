@@ -6,7 +6,7 @@ description: >-
   explicitly requested landing or merging changes, not for review, preparation,
   passing checks, or skill installation.
 metadata:
-  delta-thread: land
+  delta-action: land
 ---
 
 # Land changes
@@ -71,10 +71,10 @@ belonging to this request and create a focused commit with a clear message.
 
 Update the topic branch from the destination before publishing. If a conflict
 occurs, automatically resolve it only when the intended result is clear and
-the resolution preserves unrelated work. This is the user's established
-conflict preference. Pause and report the conflicting files when intent is
-ambiguous, the resolution could lose work, or the conflict cannot be resolved
-without guessing.
+the resolution preserves unrelated work. This is the user's conflict
+preference. Pause and report the conflicting files when intent is ambiguous,
+the resolution could lose work, or the conflict cannot be resolved without
+guessing.
 
 Push the topic branch without force:
 

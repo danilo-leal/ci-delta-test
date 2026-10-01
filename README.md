@@ -115,3 +115,5 @@ comportamento da CI.
 > Nota de teste: esta linha foi adicionada como uma alteração inofensiva ao README.
 
 > Outra nota de teste rápida.
+
+> Mais uma pequena alteração para testar o fluxo de edição.
