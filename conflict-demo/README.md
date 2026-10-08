@@ -1,39 +1,39 @@
-# Esempi per i conflitti di merge
+# Merge conflict examples
 
-Questi file sono esempi statici per testare la risoluzione dei conflitti, non un'applicazione in esecuzione.
-I branch `conflict-a` e `conflict-b` modificano intenzionalmente le stesse sezioni.
-Il workflow di GitHub Actions è separato e rimane invariato.
+These files are static examples for testing merge conflict resolution, not a running app.
+The `conflict-a` and `conflict-b` branches deliberately change the same sections.
+The GitHub Actions workflow is separate and stays as is.
 
-## Direzione del prodotto
+## Product direction
 
-La dashboard si chiama Morning Brief.
-Dà priorità alle attività urgenti e alle scadenze imminenti.
-È pensata principalmente per i responsabili dei team che pianificano la giornata.
+The dashboard is called Morning Brief.
+It puts urgent tasks and upcoming deadlines first.
+It's mainly for team leads sorting out the day's plan.
 
-## Navigazione condivisa
+## Shared navigation
 
-La navigazione include Panoramica, Attività e Impostazioni.
-Ogni pagina mantiene lo stesso ordine di navigazione.
-I link hanno etichette descrittive.
-La navigazione da tastiera segue l'ordine visivo.
-La pagina attiva è indicata esplicitamente.
+Navigation includes Overview, Tasks and Settings.
+Every page keeps the same nav order.
+Links have clear labels.
+Keyboard navigation follows the visual order.
+The active page is clearly marked.
 
-## Esperienza al primo avvio
+## First-time experience
 
-I nuovi utenti visualizzano una lista guidata per pianificare.
-La prima azione suggerita è creare l'elenco delle priorità di oggi.
-Le schermate vuote propongono un piano di esempio per iniziare.
+New users get a guided planning list.
+The first suggested step is to make today's priorities list.
+Empty screens offer a sample plan to get things rolling.
 
-## Accessibilità condivisa
+## Shared accessibility
 
-Tutti i controlli hanno indicatori di focus visibili.
-Le informazioni sullo stato sono comunicate anche tramite testo, non solo con il colore.
-I titoli seguono una gerarchia coerente.
-Le animazioni rispettano le preferenze di riduzione del movimento.
-I contenuti restano leggibili anche aumentando le dimensioni del testo.
+All controls have visible focus indicators.
+Status is communicated with text as well as colour—no relying on colour alone.
+Headings follow a consistent hierarchy.
+Animations respect reduced-motion preferences.
+Content stays readable when text is sized up.
 
-## Piano di distribuzione
+## Rollout plan
 
-Rilasciare la dashboard ai responsabili dei team in una beta privata.
-Raccogliere feedback per due settimane.
-Ampliare l'accesso dopo l'approvazione del flusso di pianificazione.
+Roll out the dashboard to team leads in a private beta.
+Gather feedback for a couple of weeks.
+Open it up further once the planning flow gets the nod.
