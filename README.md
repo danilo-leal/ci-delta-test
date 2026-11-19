@@ -1,5 +1,7 @@
 # ci-delta-test
 
+hello
+
 A temporary repository for testing GitHub CI integrations end to end.
 
 ## How CI works
