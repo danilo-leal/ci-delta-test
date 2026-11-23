@@ -12,15 +12,16 @@ on GitHub:
 
 | Check | Simulated job |
 | --- | --- |
-| Lint | 10 seconds |
-| Type checking | 20 seconds |
-| Unit tests | 30 seconds |
-| Integration tests | 40 seconds |
-| Build | 50 seconds |
+| Lint | 30 seconds |
+| Type checking | 60 seconds |
+| Unit tests | 90 seconds |
+| Integration tests | 120 seconds |
+| Build | 180 seconds |
 
-Jobs can run in parallel and finish at different times, making it easy to watch
-their status change. Starting runners and waiting in the queue can take some
-time. Each job has a two-minute limit.
+Jobs can run in parallel. The staggered delays give you about three minutes
+to watch checks move from pending to passed in Delta, plus any time spent
+waiting for runners. The simulated jobs have a five-minute limit. The required
+`CI Pass` check runs after all five finish.
 
 These are test checks: they only print messages and wait before succeeding. They
 do not analyse code. No apps, dependencies or secrets are required.
